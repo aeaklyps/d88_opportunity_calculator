@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D88 Evaluation Framework — Test Website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="grid-background"></div>
+
+    <div class="container page-container">
+
+        <a href="index.html" class="back-link">← RETURN HOME</a>
+
+        <div class="brand">
+            D88 EVALUATION FRAMEWORK
+            <span>D88 // WEBSITE ANALYSIS</span>
+        </div>
+
+        <div class="page-layout">
+
+            <div class="form-section">
+
+                <p class="eyebrow">ANALYSIS UNIT // 001</p>
+
+                <h1>TEST A WEBSITE</h1>
+
+                <label>BUSINESS NAME</label>
+
+                <input
+                    id="business"
+                    type="text"
+                    placeholder="Enter business name"
+                >
+
+                <label>WEBSITE URL</label>
+
+                <input
+                    id="website"
+                    type="text"
+                    placeholder="https://example.com"
+                >
+
+                <label>WEBSITE EVALUATION</label>
+
+                <p class="instructions">
+                    CHECK THE FEATURES THE WEBSITE DOES HAVE.
+                </p>
+
+                <label class="check">
+                    <input type="checkbox" id="mobile">
+                    Mobile friendly
+                </label>
+
+                <label class="check">
+                    <input type="checkbox" id="contact">
+                    Contact information is easy to find
+                </label>
+
+                <label class="check">
+                    <input type="checkbox" id="cta">
+                    Clear call-to-action
+                </label>
+
+                <label class="check">
+                    <input type="checkbox" id="social">
+                    Social media links
+                </label>
+
+                <label class="check">
+                    <input type="checkbox" id="design">
+                    Modern design
+                </label>
+
+                <button onclick="analyze()">
+                    ANALYZE WEBSITE
+                </button>
+
+                <div id="result"></div>
+
+            </div>
+
+            <div class="side-flower">
+                <img src="flower.png" class="flower" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
