@@ -142,12 +142,6 @@ function getFaviconURL(url) {
         return "";
     }
 
-    /*
-       Google's favicon service allows the GitHub Pages
-       frontend to display a site's favicon without trying
-       to fetch the entire website from JavaScript.
-    */
-
     return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128`;
 }
 
@@ -267,11 +261,28 @@ function createScoreInputs(containerID, categories) {
 
         wrapper.className = "score-category";
 
+        /*
+           IMPORTANT:
+
+           The original CSS targets:
+
+           .scoring-row
+
+           So the generated HTML MUST use
+           .scoring-row here.
+
+           The three grid columns are:
+
+           1. Category information
+           2. Slider
+           3. Changing percentage/value
+        */
+
         wrapper.innerHTML = `
 
-            <div class="score-category-header">
+            <div class="scoring-row">
 
-                <div>
+                <div class="score-category-info">
 
                     <strong>
                         ${escapeHTML(category.name)}
@@ -281,15 +292,12 @@ function createScoreInputs(containerID, categories) {
                         ${escapeHTML(category.description)}
                     </span>
 
+                    <span class="score-weight">
+                        ${category.weight}%
+                    </span>
+
                 </div>
 
-                <span class="score-weight">
-                    ${category.weight}%
-                </span>
-
-            </div>
-
-            <div class="score-control">
 
                 <input
                     type="range"
@@ -299,6 +307,7 @@ function createScoreInputs(containerID, categories) {
                     value="50"
                     oninput="updateScores()"
                 >
+
 
                 <span
                     id="${category.id}Value"
@@ -314,6 +323,7 @@ function createScoreInputs(containerID, categories) {
         container.appendChild(wrapper);
 
     });
+
 }
 
 
@@ -418,10 +428,6 @@ function analyze() {
     }
 
 
-    /*
-       Calculate both independent scores.
-    */
-
     const websiteScore =
         calculateWeightedScore(
             WEBSITE_CATEGORIES
@@ -440,12 +446,6 @@ function analyze() {
     const testedAt =
         new Date().toISOString();
 
-
-    /*
-       Save individual category scores as well.
-       This means the evaluation can be displayed
-       or recalculated later.
-    */
 
     const websiteScores = {};
 
@@ -488,11 +488,6 @@ function analyze() {
         websiteScore: websiteScore,
 
         opportunityScore: opportunityScore,
-
-        /*
-           Keep "score" for compatibility with
-           older V1 saved businesses.
-        */
 
         score: opportunityScore,
 
@@ -640,11 +635,6 @@ function saveBusinesses(businesses) {
 
 function getPriorityRank(priority) {
 
-    /*
-       toUpperCase() fixes the common problem where
-       "High", "HIGH", and "high" were treated differently.
-    */
-
     const normalized =
         String(priority || "")
             .trim()
@@ -696,10 +686,6 @@ function displayBusinesses() {
             : "priority";
 
 
-    /* ======================================
-       PRIORITY: HIGH → LOW
-    ====================================== */
-
     if (sortOption === "priority") {
 
         businesses.sort(function(a, b) {
@@ -708,11 +694,6 @@ function displayBusinesses() {
                 getPriorityRank(b.priority) -
                 getPriorityRank(a.priority);
 
-
-            /*
-               If two businesses have the same
-               priority, newest comes first.
-            */
 
             if (priorityDifference === 0) {
 
@@ -731,10 +712,6 @@ function displayBusinesses() {
     }
 
 
-    /* ======================================
-       MOST RECENTLY TESTED
-    ====================================== */
-
     else if (sortOption === "recent") {
 
         businesses.sort(function(a, b) {
@@ -748,10 +725,6 @@ function displayBusinesses() {
 
     }
 
-
-    /* ======================================
-       NOTHING SAVED
-    ====================================== */
 
     if (businesses.length === 0) {
 
@@ -777,10 +750,6 @@ function displayBusinesses() {
 
     businessList.innerHTML = "";
 
-
-    /* ======================================
-       CREATE BUSINESS CARDS
-    ====================================== */
 
     businesses.forEach(function(business) {
 
@@ -988,11 +957,6 @@ document.addEventListener(
     "DOMContentLoaded",
     function() {
 
-        /*
-           Build scoring controls when the tester
-           page is opened.
-        */
-
         createScoreInputs(
             "websiteScoreInputs",
             WEBSITE_CATEGORIES
@@ -1008,10 +972,6 @@ document.addEventListener(
         updateScores();
 
 
-        /*
-           URL preview.
-        */
-
         const websiteInput =
             document.getElementById("website");
 
@@ -1025,10 +985,6 @@ document.addEventListener(
 
         }
 
-
-        /*
-           Saved businesses page.
-        */
 
         displayBusinesses();
 
