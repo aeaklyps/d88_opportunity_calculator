@@ -43,7 +43,7 @@ body {
 
 
 /* =========================
-   CONTAINERS
+   MAIN CONTAINERS
 ========================= */
 
 .home-container {
@@ -156,9 +156,9 @@ h1 {
 }
 
 
-/* =========================
-   HOME
-========================= */
+/* =========================================================
+   HOME PAGE
+========================================================= */
 
 .home-main {
     position: relative;
@@ -336,9 +336,9 @@ h1 {
 }
 
 
-/* =========================
+/* =========================================================
    OTHER PAGES
-========================= */
+========================================================= */
 
 .back-link {
     display: inline-block;
@@ -354,6 +354,11 @@ h1 {
     text-decoration: none;
 }
 
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
 .page-layout {
     position: relative;
 
@@ -365,16 +370,26 @@ h1 {
 }
 
 
-/* =========================
-   TESTER / FORM SECTION
-========================= */
+/* =========================================================
+   TESTER CONTENT
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   The content gets a fixed percentage of the page,
+   while the flower sits independently on the right.
+
+   This prevents the flower from stealing width
+   from the scoring sliders.
+*/
 
 .form-section {
     position: relative;
 
-    z-index: 3;
+    z-index: 4;
 
-    width: 65%;
+    width: 72%;
 
     padding: 30px 20px;
 
@@ -384,9 +399,9 @@ h1 {
 .business-section {
     position: relative;
 
-    z-index: 3;
+    z-index: 4;
 
-    width: 65%;
+    width: 72%;
 
     padding: 30px 20px;
 
@@ -395,7 +410,7 @@ h1 {
 
 
 /* =========================
-   FORM HEADINGS
+   TESTER HEADINGS
 ========================= */
 
 .form-section h1,
@@ -406,21 +421,27 @@ h1 {
 
     letter-spacing: 2px;
 
-    margin: 15px 0 25px;
+    font-weight: 500;
+
+    margin: 20px 0;
 }
 
 .form-section h2,
 .business-section h2 {
+    color: #65e5d7;
+
     font-size: 18px;
 
     letter-spacing: 2px;
 
-    color: #65e5d7;
+    font-weight: 500;
 }
 
 
 /* =========================
    INPUTS
+
+   RANGE INPUTS ARE EXCLUDED.
 ========================= */
 
 input:not([type="checkbox"]):not([type="range"]),
@@ -520,30 +541,10 @@ button:hover {
 }
 
 
-/* =========================
-   RESULT
-========================= */
-
-#result {
-    margin-top: 30px;
-
-    padding: 25px;
-
-    border-left: 2px solid #53dfcd;
-
-    background: rgba(30, 50, 50, 0.25);
-}
-
-#result h2 {
-    color: #65e5d7;
-
-    font-size: 20px;
-}
-
-
 /* =========================================================
    SLIDER ROW
-   DO NOT CHANGE
+
+   THIS SECTION IS KEPT EXACTLY AS PROVIDED.
 ========================================================= */
 
 .scoring-row {
@@ -639,14 +640,14 @@ button:hover {
 }
 
 
-/* =========================
-   SCORING CONTAINER
-========================= */
+/* =========================================================
+   SCORING SECTION
+========================================================= */
 
 .scoring-section {
     position: relative;
 
-    z-index: 4;
+    z-index: 5;
 
     width: 100%;
 
@@ -664,20 +665,48 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================================
+   RESULT
+========================================================= */
+
+#result {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-left: 2px solid #53dfcd;
+
+    background: rgba(30, 50, 50, 0.25);
+}
+
+#result h2 {
+    color: #65e5d7;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
    SIDE FLOWER
-========================= */
+
+   Smaller than the original so it does not interfere
+   with the tester/scoring area.
+========================================================= */
 
 .side-flower {
     position: absolute;
 
-    right: -20px;
+    right: 0;
 
-    top: 40px;
+    top: 55px;
 
-    width: 30%;
+    width: 25%;
 
-    height: 600px;
+    height: 560px;
 
     display: flex;
 
@@ -695,9 +724,9 @@ button:hover {
 .side-flower .flower {
     width: 100%;
 
-    max-width: 360px;
+    max-width: 300px;
 
-    max-height: 560px;
+    max-height: 540px;
 
     object-fit: contain;
 
@@ -711,9 +740,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================================
    BUSINESS DATABASE
-========================= */
+========================================================= */
 
 .sort-area {
     width: 300px;
@@ -782,58 +811,46 @@ button:hover {
 }
 
 
-/* =========================
-   SAVED BUSINESS PAGE
-========================= */
+/* =========================================================
+   SAVED BUSINESS CONTENT
+========================================================= */
 
 .business-list {
     position: relative;
 
-    z-index: 3;
+    z-index: 4;
 
-    width: 65%;
+    width: 72%;
 
     min-width: 0;
 }
 
 
-/* =========================
-   GENERAL PAGE SPACING
-========================= */
-
-.page-container > .brand {
-    margin-bottom: 5px;
-}
-
-.page-container > .back-link {
-    position: relative;
-    z-index: 5;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   DESKTOP ADJUSTMENT
+========================================================= */
 
 @media (max-width: 1100px) {
 
     .form-section,
     .business-section,
     .business-list {
-        width: 72%;
+        width: 75%;
     }
 
     .side-flower {
-        width: 28%;
+        width: 25%;
+
         opacity: 0.35;
     }
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE SLIDER
-   DO NOT CHANGE
-========================= */
+
+   THIS SECTION IS KEPT EXACTLY AS PROVIDED.
+========================================================= */
 
 @media (max-width: 900px) {
     .scoring-row {
@@ -853,9 +870,9 @@ button:hover {
 }
 
 
-/* =========================
-   MOBILE PAGE LAYOUT
-========================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 800px) {
 
@@ -919,9 +936,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================================
    SMALL MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -931,15 +948,15 @@ button:hover {
         padding: 20px;
     }
 
-    .form-section,
-    .business-section {
-        padding: 20px 5px;
-    }
-
     .home-container {
         width: 100%;
 
         padding: 20px;
+    }
+
+    .form-section,
+    .business-section {
+        padding: 20px 5px;
     }
 
     h1 {
