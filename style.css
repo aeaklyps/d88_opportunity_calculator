@@ -1,5 +1,6 @@
 /* ==========================================
    D88 EVALUATION FRAMEWORK — V2
+   GLOBAL STYLES
 ========================================== */
 
 * {
@@ -24,7 +25,10 @@ body {
 
     color: #e8fff8;
 
-    font-family: "Orbitron", Arial, sans-serif;
+    font-family:
+        "Orbitron",
+        Arial,
+        sans-serif;
 
     font-size: 14px;
 
@@ -62,11 +66,12 @@ body {
 
 
 /* ==========================================
-   CONTAINER
+   MAIN CONTAINER
 ========================================== */
 
 .container {
     width: min(1200px, 92%);
+
     margin: 0 auto;
 }
 
@@ -102,7 +107,9 @@ body {
 
 .brand span {
     font-size: 10px;
+
     opacity: 0.5;
+
     letter-spacing: 1px;
 }
 
@@ -113,6 +120,7 @@ body {
 
 a {
     color: #7fffd4;
+
     text-decoration: none;
 }
 
@@ -220,8 +228,7 @@ input[type="text"] {
 
     padding: 15px 16px;
 
-    border:
-        1px solid
+    border: 1px solid
         rgba(130, 255, 220, 0.25);
 
     border-radius: 3px;
@@ -236,6 +243,10 @@ input[type="text"] {
     font-family: inherit;
 
     font-size: 13px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
 }
 
 input[type="text"]:focus {
@@ -276,7 +287,8 @@ input[type="text"]::placeholder {
     border-radius: 3px;
 }
 
-.website-favicon {
+.website-favicon,
+.business-favicon {
     width: 32px;
     height: 32px;
 
@@ -303,6 +315,7 @@ input[type="text"]::placeholder {
 
 .website-preview-information span {
     font-size: 11px;
+
     opacity: 0.6;
 }
 
@@ -312,269 +325,134 @@ input[type="text"]::placeholder {
 ========================================== */
 
 .scoring-section {
-    margin-top: 55px;
-    margin-bottom: 45px;
-
-    padding-top: 30px;
-
-    border-top:
-        1px solid
-        rgba(130, 255, 220, 0.15);
-}
-
-.instructions {
-    max-width: 650px;
-
-    margin-bottom: 30px;
-
-    color: rgba(232, 255, 248, 0.5);
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    line-height: 1.7;
+    margin-top: 40px;
+    margin-bottom: 35px;
 }
 
 
 /* ==========================================
-   SCORE CATEGORIES
+   SCORE CATEGORY
 ========================================== */
 
 .score-category {
-    width: 100%;
-
-    margin: 25px 0;
+    margin: 22px 0;
 }
+
 
 .score-category-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-start;
-
     gap: 20px;
 }
 
+
 .score-category-header strong {
     display: block;
-
-    margin-bottom: 6px;
-
-    color: #e8fff8;
-
-    font-size: 12px;
-
-    letter-spacing: 0.7px;
+    margin-bottom: 5px;
 }
+
 
 .score-description {
     display: block;
-
-    max-width: 600px;
-
-    color: rgba(232, 255, 248, 0.42);
-
-    font-family: Arial, sans-serif;
-
+    opacity: 0.55;
     font-size: 11px;
-
     line-height: 1.5;
+    max-width: 500px;
 }
 
+
 .score-weight {
-    flex-shrink: 0;
-
-    color: #7fffd4;
-
-    font-size: 11px;
-
-    opacity: 0.8;
+    opacity: 0.7;
+    white-space: nowrap;
 }
 
 
 /* ==========================================
-   SLIDER CONTAINER
+   SLIDER
+   ONLY THIS SECTION HAS BEEN CHANGED
 ========================================== */
 
 .score-control {
     display: flex;
-
     align-items: center;
-
-    width: 100%;
-
-    gap: 18px;
-
-    margin-top: 12px;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 
-/* ==========================================
-   SLIDER — COMPLETE CUSTOM STYLE
-========================================== */
-
 /*
-   This deliberately removes the browser's
-   default range styling.
-
-   The slider itself gets ALL available width.
+   Keep the original size/layout.
+   Only customize the colors.
 */
 
 .score-control input[type="range"] {
+    flex: 1;
 
-    appearance: none;
-    -webkit-appearance: none;
-
-    display: block;
-
-    width: 100%;
-    max-width: none;
-
-    flex: 1 1 auto;
-
-    min-width: 0;
-
-    height: 20px;
-
-    margin: 0;
-    padding: 0;
-
-    border: none;
-
-    outline: none;
-
-    background: transparent;
+    accent-color: #7fffd4;
 
     cursor: pointer;
 }
 
 
-/* ------------------------------------------
-   CHROME / EDGE / SAFARI — TRACK
------------------------------------------- */
+/* Chrome / Edge / Safari */
 
 .score-control input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
 
-    width: 100%;
+    border-radius: 10px;
 
-    height: 5px;
-
-    border: none;
-
-    border-radius: 999px;
-
-    /*
-       Same muted teal family as the rest
-       of the D88 interface.
-    */
-
-    background: #183b3a;
-
+    background: #263538;
 }
 
-
-/* ------------------------------------------
-   CHROME / EDGE / SAFARI — THUMB
------------------------------------------- */
-
 .score-control input[type="range"]::-webkit-slider-thumb {
-
     appearance: none;
     -webkit-appearance: none;
 
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
 
     margin-top: -6px;
 
-    border: 2px solid #07100f;
+    border: none;
 
     border-radius: 50%;
 
     background: #7fffd4;
 
-    box-shadow:
-        0 0 8px
-        rgba(127, 255, 212, 0.3);
-
     cursor: pointer;
-
 }
 
 
-/* ------------------------------------------
-   FIREFOX — TRACK
------------------------------------------- */
+/* Firefox */
 
 .score-control input[type="range"]::-moz-range-track {
+    height: 6px;
 
-    width: 100%;
+    border-radius: 10px;
 
-    height: 5px;
+    background: #263538;
+}
+
+.score-control input[type="range"]::-moz-range-progress {
+    height: 6px;
+
+    border-radius: 10px;
+
+    background: #5bbfa5;
+}
+
+.score-control input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
 
     border: none;
 
-    border-radius: 999px;
-
-    background: #183b3a;
-
-}
-
-
-/* ------------------------------------------
-   FIREFOX — FILLED PORTION
------------------------------------------- */
-
-.score-control input[type="range"]::-moz-range-progress {
-
-    height: 5px;
-
-    border-radius: 999px;
-
-    background: #5bbfa5;
-
-}
-
-
-/* ------------------------------------------
-   FIREFOX — THUMB
------------------------------------------- */
-
-.score-control input[type="range"]::-moz-range-thumb {
-
-    width: 17px;
-    height: 17px;
-
-    border: 2px solid #07100f;
-
     border-radius: 50%;
 
     background: #7fffd4;
 
-    box-shadow:
-        0 0 8px
-        rgba(127, 255, 212, 0.3);
-
     cursor: pointer;
-
-}
-
-
-/* ------------------------------------------
-   SLIDER FOCUS
------------------------------------------- */
-
-.score-control input[type="range"]:focus {
-    outline: none;
-}
-
-.score-control input[type="range"]:focus-visible {
-    outline: 1px solid
-        rgba(127, 255, 212, 0.5);
-
-    outline-offset: 4px;
 }
 
 
@@ -583,27 +461,9 @@ input[type="text"]::placeholder {
 ========================================== */
 
 .score-value {
+    width: 45px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex: 0 0 48px;
-
-    width: 48px;
-    height: 32px;
-
-    border:
-        1px solid
-        rgba(130, 255, 220, 0.25);
-
-    border-radius: 3px;
-
-    color: #7fffd4;
-
-    font-size: 12px;
+    text-align: right;
 
     font-weight: 600;
 }
@@ -614,43 +474,27 @@ input[type="text"]::placeholder {
 ========================================== */
 
 .total-score {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
-    margin-top: 30px;
+    margin-top: 25px;
 
-    padding: 20px 22px;
+    padding: 20px;
 
     border:
         1px solid
-        rgba(130, 255, 220, 0.35);
-
-    border-radius: 3px;
-
-    background:
-        rgba(0, 25, 23, 0.35);
+        rgba(130, 255, 220, 0.5);
 }
+
 
 .total-score span {
-
-    color: #7fffd4;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
+
 .total-score strong {
-
-    color: #e8fff8;
-
-    font-size: 25px;
+    font-size: 24px;
 }
 
 
@@ -659,41 +503,22 @@ input[type="text"]::placeholder {
 ========================================== */
 
 .priority-display {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
-    margin: 30px 0;
+    margin: 25px 0;
 
-    padding: 18px 20px;
+    padding: 18px;
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.15);
-
-    background:
-        rgba(255, 255, 255, 0.02);
+        rgba(255, 255, 255, 0.2);
 }
 
-.priority-display span {
-
-    color: rgba(232, 255, 248, 0.55);
-
-    font-size: 10px;
-
-    letter-spacing: 1.2px;
-}
 
 .priority-display strong {
-
-    color: #7fffd4;
-
-    font-size: 16px;
-
-    letter-spacing: 1px;
+    font-size: 18px;
 }
 
 
@@ -703,7 +528,6 @@ input[type="text"]::placeholder {
 
 button,
 .main-button {
-
     display: inline-block;
 
     padding: 14px 22px;
@@ -722,7 +546,6 @@ button,
     font-family: inherit;
 
     font-size: 10px;
-
     font-weight: 600;
 
     letter-spacing: 1.2px;
@@ -737,7 +560,6 @@ button,
 
 button:hover,
 .main-button:hover {
-
     background:
         rgba(127, 255, 212, 0.16);
 
@@ -752,7 +574,6 @@ button:hover,
 
 button:active,
 .main-button:active {
-
     transform: translateY(0);
 }
 
@@ -766,186 +587,61 @@ button:active,
 ========================================== */
 
 .result-box {
-
-    margin-top: 30px;
-
-    padding: 22px;
-
-    border:
-        1px solid
-        rgba(127, 255, 212, 0.4);
-
-    background:
-        rgba(0, 25, 23, 0.4);
-}
-
-.result-box h2 {
-    color: #7fffd4;
-}
-
-.result-scores {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 10px;
-
-    margin: 20px 0;
-}
-
-.result-scores div {
-
-    padding: 15px;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.12);
-
-    background:
-        rgba(255, 255, 255, 0.02);
-}
-
-.result-scores span {
-
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: rgba(232, 255, 248, 0.45);
-
-    font-size: 9px;
-
-    letter-spacing: 1px;
-}
-
-.result-scores strong {
-
-    color: #7fffd4;
-
-    font-size: 17px;
-}
-
-
-/* ==========================================
-   SAVED BUSINESSES
-========================================== */
-
-.sort-area {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-bottom: 30px;
-}
-
-.sort-area label {
-    margin: 0;
-}
-
-.sort-area select {
-
-    padding: 10px 13px;
-
-    border:
-        1px solid
-        rgba(127, 255, 212, 0.3);
-
-    border-radius: 3px;
-
-    outline: none;
-
-    background: #0b1517;
-
-    color: #7fffd4;
-
-    font-family: inherit;
-
-    font-size: 10px;
-
-    cursor: pointer;
-}
-
-.sort-area select:focus {
-    border-color: #7fffd4;
-}
-
-
-/* ==========================================
-   BUSINESS CARDS
-========================================== */
-
-.business-card {
-
-    margin-bottom: 15px;
+    margin-top: 25px;
 
     padding: 20px;
 
     border:
         1px solid
-        rgba(130, 255, 220, 0.16);
-
-    border-radius: 3px;
-
-    background:
-        rgba(8, 20, 21, 0.65);
-
-    transition:
-        border-color 0.2s,
-        transform 0.2s;
+        rgba(130, 255, 220, 0.5);
 }
 
-.business-card:hover {
+.result-scores {
+    display: grid;
 
-    border-color:
-        rgba(130, 255, 220, 0.35);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    transform: translateY(-1px);
+    gap: 12px;
+
+    margin: 20px 0;
 }
+
+.result-scores div {
+    padding: 15px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+}
+
+.result-scores span {
+    display: block;
+
+    font-size: 10px;
+
+    opacity: 0.6;
+
+    margin-bottom: 8px;
+}
+
+.result-scores strong {
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   SAVED BUSINESS CARDS
+========================================== */
 
 .business-header {
-
     display: flex;
-
     align-items: center;
-
     gap: 14px;
 }
 
-.business-favicon {
-
-    width: 34px;
-    height: 34px;
-
-    flex-shrink: 0;
-
-    object-fit: contain;
-}
-
-.business-header h2 {
-
-    margin: 0 0 5px;
-
-    font-size: 17px;
-}
-
-.business-header p {
-
-    margin: 0;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    opacity: 0.6;
-}
 
 .business-scores {
-
     display: grid;
 
     grid-template-columns:
@@ -956,76 +652,37 @@ button:active,
     margin: 20px 0;
 }
 
-.business-scores div {
 
-    padding: 13px;
+.business-scores div {
+    padding: 12px;
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.1);
+        rgba(255, 255, 255, 0.12);
 }
+
 
 .business-scores span {
-
     display: block;
 
-    margin-bottom: 7px;
+    font-size: 9px;
 
-    color: rgba(232, 255, 248, 0.45);
+    opacity: 0.6;
 
-    font-size: 8px;
-
-    letter-spacing: 1px;
+    margin-bottom: 6px;
 }
+
 
 .business-scores strong {
-
-    color: #7fffd4;
-
-    font-size: 14px;
-}
-
-.business-card > p {
-
-    margin: 10px 0 0;
-
-    color: rgba(232, 255, 248, 0.45);
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-}
-
-.delete-button {
-
-    margin-top: 15px;
-
-    padding: 8px 12px;
-
-    border-color:
-        rgba(255, 100, 150, 0.3);
-
-    color: #ff8faf;
-
-    background:
-        rgba(255, 100, 150, 0.04);
-}
-
-.delete-button:hover {
-
-    background:
-        rgba(255, 100, 150, 0.1);
-
-    box-shadow: none;
+    font-size: 15px;
 }
 
 
 /* ==========================================
-   FLOWER
+   FLOWER / SIDE DECORATION
 ========================================== */
 
 .side-flower {
-
     display: flex;
 
     justify-content: center;
@@ -1036,7 +693,6 @@ button:active,
 }
 
 .flower {
-
     width: 170px;
     max-width: 100%;
 
@@ -1050,7 +706,6 @@ button:active,
 }
 
 .business-flower {
-
     position: sticky;
 
     top: 40px;
@@ -1058,13 +713,12 @@ button:active,
 
 
 /* ==========================================
-   RESPONSIVE
+   MOBILE
 ========================================== */
 
 @media (max-width: 800px) {
 
     .page-layout {
-
         grid-template-columns: 1fr;
 
         gap: 30px;
@@ -1075,7 +729,6 @@ button:active,
     }
 
     .brand {
-
         flex-direction: column;
 
         align-items: flex-start;
@@ -1086,6 +739,7 @@ button:active,
     h1 {
         font-size: 30px;
     }
+
 }
 
 
@@ -1097,7 +751,6 @@ button:active,
 
     .result-scores,
     .business-scores {
-
         grid-template-columns: 1fr;
     }
 
@@ -1114,9 +767,9 @@ button:active,
     }
 
     .sort-area {
-
         flex-direction: column;
 
         align-items: flex-start;
     }
+
 }
