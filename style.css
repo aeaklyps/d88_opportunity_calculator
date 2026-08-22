@@ -43,7 +43,7 @@ body {
 
 
 /* =========================
-   MAIN CONTAINERS
+   CONTAINERS
 ========================= */
 
 .home-container {
@@ -69,7 +69,7 @@ body {
     width: 92%;
     max-width: 1250px;
 
-    margin: 0 auto;
+    margin: auto;
 
     padding: 35px 40px;
 }
@@ -156,9 +156,9 @@ h1 {
 }
 
 
-/* =========================================================
-   HOME PAGE
-========================================================= */
+/* =========================
+   HOME
+========================= */
 
 .home-main {
     position: relative;
@@ -336,9 +336,9 @@ h1 {
 }
 
 
-/* =========================================================
+/* =========================
    OTHER PAGES
-========================================================= */
+========================= */
 
 .back-link {
     display: inline-block;
@@ -354,11 +354,6 @@ h1 {
     text-decoration: none;
 }
 
-
-/* =========================
-   PAGE LAYOUT
-========================= */
-
 .page-layout {
     position: relative;
 
@@ -370,82 +365,35 @@ h1 {
 }
 
 
-/* =========================================================
-   TESTER CONTENT
-========================================================= */
-
-/*
-   IMPORTANT:
-
-   The content gets a fixed percentage of the page,
-   while the flower sits independently on the right.
-
-   This prevents the flower from stealing width
-   from the scoring sliders.
-*/
-
-.form-section {
-    position: relative;
-
-    z-index: 4;
-
-    width: 72%;
-
-    padding: 30px 20px;
-
-    min-width: 0;
-}
-
-.business-section {
-    position: relative;
-
-    z-index: 4;
-
-    width: 72%;
-
-    padding: 30px 20px;
-
-    min-width: 0;
-}
-
-
 /* =========================
-   TESTER HEADINGS
+   FORM / TESTER SECTION
 ========================= */
 
-.form-section h1,
-.business-section h1 {
-    font-size: 32px;
+.form-section,
+.business-section {
 
-    line-height: 1.15;
+    position: relative;
 
-    letter-spacing: 2px;
+    z-index: 4;
 
-    font-weight: 500;
+    width: 68%;
 
-    margin: 20px 0;
-}
+    padding: 30px 20px;
 
-.form-section h2,
-.business-section h2 {
-    color: #65e5d7;
-
-    font-size: 18px;
-
-    letter-spacing: 2px;
-
-    font-weight: 500;
+    min-width: 0;
 }
 
 
 /* =========================
    INPUTS
 
+   IMPORTANT:
    RANGE INPUTS ARE EXCLUDED.
 ========================= */
 
 input:not([type="checkbox"]):not([type="range"]),
 select {
+
     width: 100%;
 
     padding: 14px;
@@ -465,6 +413,7 @@ select {
 
 input:not([type="checkbox"]):not([type="range"]):focus,
 select:focus {
+
     border-color: #53dfcd;
 
     box-shadow:
@@ -478,6 +427,7 @@ select:focus {
 
 .form-section > label:not(.check),
 .business-section > label {
+
     display: block;
 
     font-size: 8px;
@@ -493,6 +443,7 @@ select:focus {
 ========================= */
 
 .check {
+
     display: block;
 
     margin: 18px 0;
@@ -505,6 +456,7 @@ select:focus {
 }
 
 .check input {
+
     margin-right: 12px;
 
     accent-color: #50dfcd;
@@ -516,6 +468,7 @@ select:focus {
 ========================= */
 
 button {
+
     padding: 15px 25px;
 
     margin-top: 25px;
@@ -534,6 +487,7 @@ button {
 }
 
 button:hover {
+
     background: rgba(70, 220, 200, 0.12);
 
     box-shadow:
@@ -543,8 +497,7 @@ button:hover {
 
 /* =========================================================
    SLIDER ROW
-
-   THIS SECTION IS KEPT EXACTLY AS PROVIDED.
+   EXACT ORIGINAL CODE
 ========================================================= */
 
 .scoring-row {
@@ -640,39 +593,52 @@ button:hover {
 }
 
 
-/* =========================================================
-   SCORING SECTION
-========================================================= */
+/* =========================
+   SIDE FLOWER
+========================= */
 
-.scoring-section {
-    position: relative;
+.side-flower {
 
-    z-index: 5;
+    position: absolute;
+
+    right: 0;
+
+    top: 30px;
+
+    width: 27%;
+
+    height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0.65;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.side-flower .flower {
 
     width: 100%;
 
-    min-width: 0;
+    max-width: 330px;
 
-    margin-top: 30px;
-}
+    max-height: 600px;
 
-.scoring-section h2 {
-    margin-bottom: 25px;
-}
-
-.scoring-section .scoring-row {
-    margin-bottom: 22px;
+    object-fit: contain;
 }
 
 
-/* =========================================================
+/* =========================
    RESULT
-========================================================= */
+========================= */
 
 #result {
-    position: relative;
-
-    z-index: 5;
 
     margin-top: 30px;
 
@@ -684,73 +650,26 @@ button:hover {
 }
 
 #result h2 {
+
     color: #65e5d7;
 
     font-size: 20px;
 }
 
 
-/* =========================================================
-   SIDE FLOWER
-
-   Smaller than the original so it does not interfere
-   with the tester/scoring area.
-========================================================= */
-
-.side-flower {
-    position: absolute;
-
-    right: 0;
-
-    top: 55px;
-
-    width: 25%;
-
-    height: 560px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    opacity: 0.55;
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-.side-flower .flower {
-    width: 100%;
-
-    max-width: 300px;
-
-    max-height: 540px;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 0 15px rgba(80, 230, 220, 0.20)
-        )
-        drop-shadow(
-            0 0 30px rgba(170, 100, 255, 0.15)
-        );
-}
-
-
-/* =========================================================
+/* =========================
    BUSINESS DATABASE
-========================================================= */
+========================= */
 
 .sort-area {
+
     width: 300px;
 
     margin: 25px 0;
 }
 
 .sort-area label {
+
     display: block;
 
     margin-bottom: 10px;
@@ -763,6 +682,7 @@ button:hover {
 }
 
 .business-card {
+
     padding: 20px;
 
     margin: 15px 0;
@@ -773,6 +693,7 @@ button:hover {
 }
 
 .business-card h2 {
+
     margin: 0 0 10px;
 
     font-size: 14px;
@@ -781,6 +702,7 @@ button:hover {
 }
 
 .business-card p {
+
     color: #829795;
 
     font-size: 8px;
@@ -789,10 +711,12 @@ button:hover {
 }
 
 .business-card a {
+
     color: #55dccc;
 }
 
 .delete-button {
+
     border-color: #775555;
 
     color: #d89090;
@@ -803,6 +727,7 @@ button:hover {
 }
 
 .small-button {
+
     display: block;
 
     width: 220px;
@@ -811,46 +736,31 @@ button:hover {
 }
 
 
-/* =========================================================
-   SAVED BUSINESS CONTENT
-========================================================= */
-
-.business-list {
-    position: relative;
-
-    z-index: 4;
-
-    width: 72%;
-
-    min-width: 0;
-}
-
-
-/* =========================================================
-   DESKTOP ADJUSTMENT
-========================================================= */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 1100px) {
 
     .form-section,
-    .business-section,
-    .business-list {
-        width: 75%;
+    .business-section {
+
+        width: 72%;
     }
 
     .side-flower {
-        width: 25%;
 
-        opacity: 0.35;
+        width: 28%;
+
+        opacity: 0.4;
     }
 }
 
 
-/* =========================================================
+/* =========================
    RESPONSIVE SLIDER
-
-   THIS SECTION IS KEPT EXACTLY AS PROVIDED.
-========================================================= */
+   EXACT ORIGINAL CODE
+========================= */
 
 @media (max-width: 900px) {
     .scoring-row {
@@ -870,33 +780,38 @@ button:hover {
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media (max-width: 800px) {
 
     .home-container {
+
         padding: 25px;
     }
 
     .container {
+
         width: 94%;
 
         padding: 25px;
     }
 
     .home-main {
+
         min-height: 650px;
     }
 
     .home-text {
+
         width: 100%;
 
         padding-left: 0;
     }
 
     .home-flower {
+
         left: 15%;
 
         width: 85%;
@@ -905,6 +820,7 @@ button:hover {
     }
 
     .home-buttons {
+
         flex-direction: column;
 
         align-items: center;
@@ -913,42 +829,48 @@ button:hover {
     }
 
     .main-button {
+
         width: 90%;
     }
 
     .hud {
+
         display: none;
     }
 
     .page-layout {
+
         display: block;
     }
 
     .form-section,
-    .business-section,
-    .business-list {
+    .business-section {
+
         width: 100%;
     }
 
     .side-flower {
+
         display: none;
     }
 }
 
 
-/* =========================================================
+/* =========================
    SMALL MOBILE
-========================================================= */
+========================= */
 
 @media (max-width: 600px) {
 
     .container {
+
         width: 100%;
 
         padding: 20px;
     }
 
     .home-container {
+
         width: 100%;
 
         padding: 20px;
@@ -956,14 +878,17 @@ button:hover {
 
     .form-section,
     .business-section {
+
         padding: 20px 5px;
     }
 
     h1 {
+
         font-size: 32px;
     }
 
     .home-text h1 {
+
         font-size: 34px;
     }
 }
