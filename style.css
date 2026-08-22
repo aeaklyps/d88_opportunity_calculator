@@ -892,3 +892,44 @@ button:hover {
         font-size: 34px;
     }
 }
+
+.scoring-row input[type="range"] {
+    width: 100% !important;
+    height: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    background: transparent !important;
+}
+
+.scoring-row input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px !important;
+    border-radius: 2px !important;
+    background: #3a3d40 !important;
+}
+
+.scoring-row input[type="range"]::-webkit-slider-thumb {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: -8px !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background: #8055e8 !important;
+}
+
+.scoring-row input[type="range"]::-moz-range-track {
+    height: 4px !important;
+    border-radius: 2px !important;
+    background: #3a3d40 !important;
+}
+
+.scoring-row input[type="range"]::-moz-range-thumb {
+    width: 20px !important;
+    height: 20px !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background: #8055e8 !important;
+}
